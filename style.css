@@ -128,9 +128,9 @@ body { background: #f9fafb; color: #0f172a; }
 .role-badge { font-size: 9px; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
 
 .nav-actions { display: flex; align-items: center; gap: 15px; }
-.search-box { position: relative; width: 220px; }
+.search-box { position: relative; width: 320px; }
 .search-box input { width: 100%; padding: 8px 12px 8px 34px; border: 1px solid #cbd5e1; border-radius: 20px; font-size: 12px; outline: none; }
-.search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 12px; }
+.search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #94a3b8; font-size: 12px; }
 
 .icon-btn { position: relative; background: none; 
             border: none; font-size: 18px; color: 
@@ -201,15 +201,15 @@ body { background: #f9fafb; color: #0f172a; }
 .track-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9); background: #fff; width: 90%; max-width: 440px; padding: 25px; border-radius: 20px; display: none; z-index: 1101; }
 .track-modal.active { display: block; transform: translate(-50%, -50%) scale(1); }
 
-.cart-drawer { position: fixed; top: 0; right: -420px; width: 380px; height: 100vh; background: #f7f0f0; z-index: 1101; display: flex; flex-direction: column; transition: 0.3s ease; }
+.cart-drawer { position: fixed; top: 0; right: -420px; width: 380px; height: 100vh; background: #fffdfd; z-index: 1101; display: flex; flex-direction: column; transition: 0.3s ease; }
 .cart-drawer.active { right: 0; }
 .cart-header { padding: 16px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; }
 .cart-items-container { flex: 1; padding: 16px; overflow-y: auto; }
-.cart-footer { padding: 16px; border-top: 1px solid #e2e8f0; background: #f8fafc; }
+.cart-footer { padding: 16px; border-top: 1px solid #e2e8f0; background: #000000; }
 
 .compat-box { margin: 12px 16px; padding: 12px; border-radius: 10px; font-size: 12px; }
 .compat-error { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; }
 .compat-success { background: #f0fdf4; border: 1px solid #bbf7d0; color: #16a34a; }
 
 .close-modal-btn, .close-cart-btn { background: none; border: none; font-size: 20px; cursor: pointer; color: #64748b; }
-.checkout-btn { width: 100%; padding: 12px; background: #0a9bcb; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; }
+.checkout-btn { width: 100%; padding: 12px; background: #17aecd; color: #fff; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; }
