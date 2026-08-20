@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zyntech Hardware - Authentication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="zyn-auth-body">
+
+ 
+    <div class="zyn-auth-wrapper">
+        <div class="zyn-auth-card">
+            <!-- Header Brand -->
+            <div class="auth-brand">
+               <img src="img/zyntechalltp.png" alt="Zyntech Logo" class="auth-logo" width="200">
+            </div>
+
+            <!-- Switch Tabs -->
+            <div class="zyn-tabs">
+                <button class="zyn-tab active" id="tabLoginBtn" onclick="switchAuthTab('index')">
+                    <i class="fa-solid fa-shield-halved"></i> Login
+                </button>
+                <button class="zyn-tab" id="tabRegBtn" onclick="switchAuthTab('index')">
+                    <i class="fa-solid fa-user-plus"></i> Register
+                </button>
+            </div>
+
+            <!-- Login Form -->
+            <form class="zyn-form active" id="loginForm" onsubmit="return handleLogin(event)">
+                <div class="form-header">
+                    <h3>Welcome Back</h3>
+                    <p>Access your PC Compatibility Engine</p>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <i class="fa-solid fa-eye toggle-eye" onclick="togglePassword('loginPassword', this)"></i>
+                </div>
+
+                <div class="auth-options">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#" class="forgot-pass">Forgot Password?</a>
+                </div>
+
+                <p class="error-msg" id="loginError"></p>
+
+                <button type="submit" class="auth-btn zyn-btn">
+                    <span>Login to Account</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <!-- Register Form -->
+            <form class="zyn-form" id="registerForm" onsubmit="return handleRegister(event)" style="display:none;">
+                <div class="form-header">
+                    <h3>Create Account</h3>
+                    <p>Join Zyntech PC Builder Hub</p>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="regName" placeholder="Full Name" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="regEmail" placeholder="Email Address" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" id="regPhone" placeholder="Phone Number" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="regPassword" placeholder="Password (Min 6 chars)" required>
+                    <i class="fa-solid fa-eye toggle-eye" onclick="togglePassword('regPassword', this)"></i>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="regAddress" placeholder="Delivery Address" required>
+                </div>
+
+                <p class="error-msg" id="regError"></p>
+
+                <button type="submit" class="auth-btn zyn-btn">
+                    <span>Create Account</span> <i class="fa-solid fa-user-check"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

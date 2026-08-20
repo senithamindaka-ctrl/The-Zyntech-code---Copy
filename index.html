@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zyntech Store - Hardware Catalog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-body">
+
+    <!-- Fixed & Clean Navbar -->
+    <header class="navbar">
+        <div class="logo">
+           
+            <div class="logo-text">
+                
+               <img src="img/zynteck.png" alt="Zyntech Logo" class="logo-img" width="100" height="auto">
+               <img src="img/zyntechnametp.png" alt="Zyntech Logo" class="logo-img" width="110" height="auto">
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
+            
+            <div class="nav-dropdown">
+                <a href="#products" class="dropbtn"><i class="fa-solid fa-layer-group"></i> Categories <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                <div class="dropdown-menu">
+                    <a href="javascript:void(0)" onclick="filterByCategory('all')"><i class="fa-solid fa-border-all"></i> All Hardware</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('cpu')"><i class="fa-solid fa-microchip"></i> Processors (CPU)</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('gpu')"><i class="fa-solid fa-tv"></i> Graphics Cards (GPU)</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('motherboard')"><i class="fa-solid fa-server"></i> Motherboards</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('ram')"><i class="fa-solid fa-memory"></i> RAM Memory</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('psu')"><i class="fa-solid fa-plug"></i> Power Supplies</a>
+                </div>
+            </div>
+
+            <a href="javascript:void(0)" onclick="toggleTrackModal()"><i class="fa-solid fa-truck-fast"></i> Track Order</a>
+             <a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+             <a href="#about"><i class="fa-solid fa-info-circle"></i> About us</a>
+        </nav>
+
+        <div class="nav-actions">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" onkeyup="filterBySearch()" placeholder="Search GPU, CPU, RAM...">
+            </div>
+
+            <button class="icon-btn theme-toggle" onclick="toggleDarkMode()" title="Toggle Theme">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
+
+            <a href="javascript:void(0)" onclick="toggleCart()" class="icon-btn cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="badge" id="cartCount">0</span>
+            </a>
+
+            <!-- Clean Floating User Menu -->
+            <div class="nav-dropdown user-dropdown">
+                <button class="user-pill-btn">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span id="navUserName">ZYNTECH Login</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="user-info-header">
+                        <strong id="userDisplayName">ZYNTECH Login</strong>
+                        <span class="role-badge">CUSTOMER</span>
+                    </div>
+                    <hr>
+                    <a href="javascript:void(0)" onclick="toggleTrackModal()"><i class="fa-solid fa-box"></i> My Orders</a>
+                  
+                   
+                    <a href="javascript:void(0)" onclick="logout()" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- NEW WHITE & CYAN HARDWARE HERO (Different from your old Purple style) -->
+    <section class="hero-section">
+        <div class="hero-wrapper">
+            <div class="hero-text-block">
+                <span class="hero-chip"><i class="fa-solid fa-bolt"></i> Real-Time Engine V2.0</span>
+                <h1>Build Modern PCs <span>Without Compatibility Conflicts</span></h1>
+                <p>Zyntech Engine automatically verifies Socket types, RAM frequencies, and PSU Wattage in real time before checkout.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Socket Accuracy</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Auto</h3>
+                        <p>Wattage Calculator</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop" alt="PC Hardware">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-header">
+            <h2 class="section-title" id="productGridTitle">Hardware Catalog</h2>
+            <span id="productCountBadge" class="count-badge">0 Items Available</span>
+        </div>
+        <div class="product-grid" id="mainProductGrid"></div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
+        <div class="about-wrapper">
+            <div class="about-text-block">
+                <span class="hero-chip"><i class="fa-solid fa-microchip"></i> Who We Are</span>
+                <h2>About <span>ZYNTECH</span></h2>
+                <p>ZYNTECH started with a simple frustration every PC builder knows too well — ordering parts online and hoping they actually fit together. We built our Real-Time Compatibility Engine to take that guesswork out of the equation, checking socket types, RAM standards, and power requirements before a single order ships. Today, we're a hardware store built by enthusiasts, for enthusiasts, committed to helping first-time builders and veterans alike put together systems that just work.</p>
+                <div class="about-stats">
+                    <div class="about-stat-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <h4>Verified Compatibility</h4>
+                            <p>Every build checked before checkout</p>
+                        </div>
+                    </div>
+                    <div class="about-stat-item">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <div>
+                            <h4>Island-Wide Delivery</h4>
+                            <p>Fast, trackable shipping</p>
+                        </div>
+                    </div>
+                    <div class="about-stat-item">
+                        <i class="fa-solid fa-headset"></i>
+                        <div>
+                            <h4>Built By Enthusiasts</h4>
+                            <p>Real hardware knowledge, real support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track Modal -->
+    <div class="track-modal-overlay" id="trackModalOverlay" onclick="toggleTrackModal()"></div>
+    <div class="track-modal" id="trackModal">
+        <div class="modal-header">
+            <h3><i class="fa-solid fa-truck-fast"></i> Track Shipment</h3>
+            <button class="close-modal-btn" onclick="toggleTrackModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Enter your Order ID to track shipment:</p>
+            <div class="track-form">
+                <input type="text" id="trackInput" placeholder="Order Ref ID (e.g. ZYN-8821)">
+                <button onclick="checkOrderStatus()">Track</button>
+            </div>
+            <div id="trackResult" class="track-result"></div>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+     
+    <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Hardware Build Cart</h3>
+            <button class="close-cart-btn" onclick="toggleCart()">&times;</button>
+        </div>
+
+        <div id="compatibilityStatusBox" class="compat-box"></div>
+        <div class="cart-items-container" id="cartItemsContainer"></div>
+
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total Amount:</span>
+                <span class="total-price" id="cartTotal">LKR 0</span>
+            </div>
+            <button class="checkout-btn" id="btnCheckout" onclick="goToCheckout()">Proceed to Checkout <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const defaultProducts = [
+            { id: 1, title: "Intel Core i7-13700K Processor", category: "cpu", socket: "LGA1700", powerDraw: 125, price: 135000, image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=500&auto=format&fit=crop" },
+            { id: 2, title: "AMD Ryzen 7 7800X3D Processor", category: "cpu", socket: "AM5", powerDraw: 120, price: 148000, image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=500&auto=format&fit=crop" },
+            { id: 3, title: "ASUS ROG Strix Z790 Motherboard", category: "motherboard", socket: "LGA1700", ramType: "DDR5", powerDraw: 50, price: 115000, image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=500&auto=format&fit=crop" },
+            { id: 4, title: "MSI B650 Gaming WiFi Motherboard", category: "motherboard", socket: "AM5", ramType: "DDR5", powerDraw: 45, price: 78000, image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=500&auto=format&fit=crop" },
+            { id: 5, title: "Corsair Vengeance 32GB (2x16GB) DDR5", category: "ram", ramType: "DDR5", powerDraw: 15, price: 42000, image: "https://images.unsplash.com/photo-1562976540-1502c2145186?q=80&w=500&auto=format&fit=crop" },
+            { id: 6, title: "NVIDIA RTX 4070 Ti Super 16GB", category: "gpu", reqPower: 285, price: 295000, image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=500&auto=format&fit=crop" },
+            { id: 7, title: "Corsair RM750e 750W 80+ Gold PSU", category: "psu", wattage: 750, price: 39000, image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=500&auto=format&fit=crop" }
+        ];
+
+        let productsData = JSON.parse(localStorage.getItem('zynProducts')) || defaultProducts;
+        let cart = JSON.parse(localStorage.getItem('userCart')) || [];
+
+        function renderProducts(items) {
+            const grid = document.getElementById('mainProductGrid');
+            const badge = document.getElementById('productCountBadge');
+            if (badge) badge.innerText = `${items.length} Items Available`;
+
+            if (items.length === 0) {
+                grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:#64748b;">No component found matching query.</p>';
+                return;
+            }
+            
+            grid.innerHTML = items.map(item => `
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="${item.image}" alt="${item.title}">
+                    </div>
+                    <div class="product-details">
+                        <span class="category-tag">${item.category.toUpperCase()}</span>
+                        <h4>${item.title}</h4>
+                        <div class="price-row">
+                            <span class="price">LKR ${item.price.toLocaleString()}</span>
+                            <button class="add-cart-btn" onclick="addToCart(${item.id})"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterByCategory(cat) {
+            const title = document.getElementById('productGridTitle');
+            if(cat === 'all') {
+                title.innerText = "All Hardware Catalog";
+                renderProducts(productsData);
+            } else {
+                title.innerText = `Category: ${cat.toUpperCase()}`;
+                renderProducts(productsData.filter(p => p.category === cat));
+            }
+        }
+
+        function filterBySearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            renderProducts(productsData.filter(item => item.title.toLowerCase().includes(query) || item.category.toLowerCase().includes(query)));
+        }
+
+        function addToCart(productId) {
+            const item = productsData.find(p => p.id === productId);
+            const existingIndex = cart.findIndex(c => c.id === productId);
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push({ ...item, qty: 1 });
+            }
+            saveAndRenderCart();
+            toggleCart();
+        }
+
+        function updateQty(index, change) {
+            cart[index].qty += change;
+            if (cart[index].qty <= 0) cart.splice(index, 1);
+            saveAndRenderCart();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            saveAndRenderCart();
+        }
+
+        function saveAndRenderCart() {
+            localStorage.setItem('userCart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function evaluateCompatibility() {
+            const statusBox = document.getElementById('compatibilityStatusBox');
+            const btnCheckout = document.getElementById('btnCheckout');
+            if (!statusBox) return;
+
+            if (cart.length === 0) {
+                statusBox.style.display = 'none';
+                btnCheckout.disabled = false;
+                btnCheckout.style.opacity = '1';
+                return;
+            }
+
+            const cpus = cart.filter(i => i.category === 'cpu');
+            const motherboards = cart.filter(i => i.category === 'motherboard');
+            const rams = cart.filter(i => i.category === 'ram');
+            const psus = cart.filter(i => i.category === 'psu');
+
+            let errors = [];
+
+            if (cpus.length > 0 && motherboards.length > 0 && cpus[0].socket !== motherboards[0].socket) {
+                errors.push(`<b>Socket Error:</b> CPU (${cpus[0].socket}) != Motherboard (${motherboards[0].socket})`);
+            }
+
+            if (rams.length > 0 && motherboards.length > 0 && rams[0].ramType !== motherboards[0].ramType) {
+                errors.push(`<b>RAM Error:</b> Board takes ${motherboards[0].ramType}, RAM is ${rams[0].ramType}`);
+            }
+
+            statusBox.style.display = 'block';
+            if (errors.length > 0) {
+                statusBox.className = "compat-box compat-error";
+                statusBox.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ` + errors.join('<br>');
+                btnCheckout.disabled = true;
+                btnCheckout.style.opacity = '0.5';
+            } else {
+                statusBox.className = "compat-box compat-success";
+                statusBox.innerHTML = `<i class="fa-solid fa-circle-check"></i> <b>System Fully Compatible!</b>`;
+                btnCheckout.disabled = false;
+                btnCheckout.style.opacity = '1';
+            }
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cartItemsContainer');
+            const countBadge = document.getElementById('cartCount');
+            const totalElem = document.getElementById('cartTotal');
+
+            let totalQty = 0;
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="empty-cart-msg">Your build cart is empty.</p>';
+            } else {
+                container.innerHTML = cart.map((item, index) => {
+                    totalQty += item.qty;
+                    totalPrice += item.price * item.qty;
+                    return `
+                        <div class="cart-item">
+                            <img src="${item.image}" alt="${item.title}">
+                            <div class="cart-item-info">
+                                <h5>${item.title}</h5>
+                                <span class="price">LKR ${(item.price * item.qty).toLocaleString()}</span>
+                                <div class="qty-controls">
+                                    <button onclick="updateQty(${index}, -1)">-</button>
+                                    <span>${item.qty}</span>
+                                    <button onclick="updateQty(${index}, 1)">+</button>
+                                </div>
+                            </div>
+                            <button class="delete-btn" onclick="removeItem(${index})"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            countBadge.innerText = totalQty;
+            totalElem.innerText = `LKR ${totalPrice.toLocaleString()}`;
+            evaluateCompatibility();
+        }
+
+        function goToCheckout() {
+            if (cart.length === 0) return alert("Cart empty!");
+            window.location.href = "checkout.html";
+        }
+
+        renderProducts(productsData);
+        renderCart();
+    </script>
+    
+</body>
+</html>
