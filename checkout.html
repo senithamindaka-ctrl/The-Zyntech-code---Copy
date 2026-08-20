@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,139 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        body { background: #f8fafc; overflow-y: auto; height: auto; }
-        .checkout-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 380px; gap: 30px; }
-        .checkout-box { background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); }
-        .checkout-box h3 { margin-bottom: 20px; color: #0f172a; font-size: 18px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-size: 13px; color: #475569; margin-bottom: 6px; font-weight: 500; }
-        .form-group input, .form-group select { width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 10px; outline: none; font-size: 14px; }
-        .order-summary-item { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 14px; color: #475569; }
-        .total-row { border-top: 2px dashed #e2e8f0; padding-top: 12px; font-weight: 700; color: #0f172a; font-size: 16px; }
-        .place-order-btn { width: 100%; padding: 14px; background: #0284c7; color: #fff; border: none; border-radius: 12px; font-weight: 600; font-size: 15px; cursor: pointer; margin-top: 20px; transition: 0.3s; }
-        .place-order-btn:hover { background: #0369a1; }
-        @media (max-width:768px){ .checkout-container { grid-template-columns: 1fr; } }
+        body {
+            background: #f8fafc;
+            overflow-y: auto;
+            height: auto;
+        }
+
+        .checkout-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 30px;
+        }
+
+        .checkout-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+        }
+
+        .checkout-box h3 {
+            margin-bottom: 20px;
+            color: #0f172a;
+            font-size: 18px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            color: #475569;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .order-summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .total-row {
+            border-top: 2px dashed #e2e8f0;
+            padding-top: 12px;
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 16px;
+        }
+
+        .place-order-btn {
+            width: 100%;
+            padding: 14px;
+            background: #0284c7;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .place-order-btn:hover {
+            background: #0369a1;
+        }
+
+        @media (max-width:768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <header class="navbar">
         <div class="logo">
-           
-             <img src="img/zynteck.png" alt="Zyntech Logo" class="logo-img" width="100" height="auto">
-               <img src="img/zyntechnametp.png" alt="Zyntech Logo" class="logo-img" width="110" height="auto">
+
+            <img src="img/zynteck.png" alt="Zyntech Logo" class="logo-img" width="100" height="auto">
+            <img src="img/zyntechnametp.png" alt="Zyntech Logo" class="logo-img" width="110" height="auto">
         </div>
-        <a href="index.html" class="btn secondary-btn" style="color:#0284c7; border-color:#0284c7;"><i class="fa-solid fa-arrow-left"></i> Back to Catalog</a>
+
+        <nav class="nav-links">
+            <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home </a>
+
+            <div class="nav-dropdown">
+                <a href="#products" class="dropbtn"><i class="fa-solid fa-layer-group"></i> Categories <i
+                        class="fa-solid fa-chevron-down arrow-icon"></i></a>
+                <div class="dropdown-menu">
+                    <a href="javascript:void(0)" onclick="filterByCategory('all')"><i
+                            class="fa-solid fa-border-all"></i> All Hardware</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('cpu')"><i class="fa-solid fa-microchip"></i>
+                        Processors (CPU)</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('gpu')"><i class="fa-solid fa-tv"></i>
+                        Graphics Cards (GPU)</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('motherboard')"><i
+                            class="fa-solid fa-server"></i> Motherboards</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('ram')"><i class="fa-solid fa-memory"></i>
+                        RAM Memory</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('psu')"><i class="fa-solid fa-plug"></i>
+                        Power Supplies</a>
+                </div>
+            </div>
+
+            <a href="javascript:void(0)" onclick="toggleTrackModal()"><i class="fa-solid fa-truck-fast"></i> Track
+                Order</a>
+            <a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+            <a href="#about"><i class="fa-solid fa-info-circle"></i> About us</a>
+        </nav>
+
+        <a href="index.html" class="btn secondary-btn" style="color:#0284c7; border-color:#0284c7;"><i
+                class="fa-solid fa-arrow-left"></i> Back to Catalog</a>
     </header>
 
     <div class="checkout-container">
@@ -101,13 +212,14 @@
         function placeOrder() {
             const name = document.getElementById('custName').value.trim();
             const address = document.getElementById('custAddress').value.trim();
-            if(!name || !address) return alert("Please fill details!");
+            if (!name || !address) return alert("Please fill details!");
 
             alert(`Thank you ${name}! Your hardware order has been successfully placed.\nShipping to: ${address}`);
             localStorage.removeItem('userCart');
             window.location.href = "index.html";
-            
+
         }
     </script>
 </body>
+
 </html>

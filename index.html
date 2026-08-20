@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,37 +8,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="home-body">
 
     <!-- Fixed & Clean Navbar -->
     <header class="navbar">
         <div class="logo">
-           
+
             <div class="logo-text">
-                
-               <img src="img/zynteck.png" alt="Zyntech Logo" class="logo-img" width="100" height="auto">
-               <img src="img/zyntechnametp.png" alt="Zyntech Logo" class="logo-img" width="110" height="auto">
+
+                <img src="img/zynteck.png" alt="Zyntech Logo" class="logo-img" width="100" height="auto">
+                <img src="img/zyntechnametp.png" alt="Zyntech Logo" class="logo-img" width="110" height="auto">
             </div>
         </div>
 
         <nav class="nav-links">
             <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home </a>
-            
+
             <div class="nav-dropdown">
                 <a href="#products" class="dropbtn"><i class="fa-solid fa-layer-group"></i> Categories <i class="fa-solid fa-chevron-down arrow-icon"></i></a>
                 <div class="dropdown-menu">
-                    <a href="javascript:void(0)" onclick="filterByCategory('all')"><i class="fa-solid fa-border-all"></i> All Hardware</a>
-                    <a href="javascript:void(0)" onclick="filterByCategory('cpu')"><i class="fa-solid fa-microchip"></i> Processors (CPU)</a>
-                    <a href="javascript:void(0)" onclick="filterByCategory('gpu')"><i class="fa-solid fa-tv"></i> Graphics Cards (GPU)</a>
-                    <a href="javascript:void(0)" onclick="filterByCategory('motherboard')"><i class="fa-solid fa-server"></i> Motherboards</a>
-                    <a href="javascript:void(0)" onclick="filterByCategory('ram')"><i class="fa-solid fa-memory"></i> RAM Memory</a>
-                    <a href="javascript:void(0)" onclick="filterByCategory('psu')"><i class="fa-solid fa-plug"></i> Power Supplies</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('monitors & monitor arms')"><i class="fa-solid fa-display"></i> MONITORS & MONITOR ARMS </a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('Processors')"><i class="fa-solid fa-microchip"></i> PROCESSORS </a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('motherboard')"><i class="fa-solid fa-diagram-project"></i> MOTHERBOARDS </a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('memory (RAM)')"><i class="fa-solid fa-memory"></i> MEMORY (RAM)</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('graphic cards')"><i class="fa-solid fa-server"></i> GRAPHICS CARDS</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('power supply, UPS & Surge Protectors')"><i class="fa-solid fa-plug"></i> POWER SUPPLY, UPS & SURGE PROTECTORS</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('cooling & Lightning')"><i class="fa-solid fa-fan"></i> COOLING & LIGHTNING</a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('storage & nas')"><i class="fa-solid fa-hdd"></i> STORAGE & NAS </a>
+                    <a href="javascript:void(0)" onclick="filterByCategory('casings')"><i class="fa-solid fa-box"></i> CASINGS </a>
                 </div>
             </div>
 
-            <a href="javascript:void(0)" onclick="toggleTrackModal()"><i class="fa-solid fa-truck-fast"></i> Track Order</a>
-             <a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
-             <a href="#about"><i class="fa-solid fa-info-circle"></i> About us</a>
+            <a href="javascript:void(0)" onclick="toggleTrackModal()"><i class="fa-solid fa-truck-fast"></i> Track
+                Order</a>
+            <a href="#faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+            <a href="#about"><i class="fa-solid fa-info-circle"></i> About us</a>
         </nav>
 
         <div class="nav-actions">
@@ -46,7 +52,7 @@
                 <input type="text" id="searchInput" onkeyup="filterBySearch()" placeholder="Search GPU, CPU, RAM...">
             </div>
 
-           
+
 
             <a href="javascript:void(0)" onclick="toggleCart()" class="icon-btn cart-btn">
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -65,10 +71,12 @@
                         <span class="role-badge">CUSTOMER</span>
                     </div>
                     <hr>
-                    <a href="javascript:void(0)" onclick="toggleTrackModal()"><i class="fa-solid fa-box"></i> My Orders</a>
-                  
-                   
-                    <a href="javascript:void(0)" onclick="logout()" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                    <a href="javascript:void(0)" onclick="toggleTrackModal()"><i class="fa-solid fa-box"></i> My
+                        Orders</a>
+
+
+                    <a href="javascript:void(0)" onclick="logout()" class="logout-link"><i
+                            class="fa-solid fa-right-from-bracket"></i> Logout</a>
                 </div>
             </div>
         </div>
@@ -80,7 +88,8 @@
             <div class="hero-text-block">
                 <span class="hero-chip"><i class="fa-solid fa-bolt"></i> Real-Time Engine V2.0</span>
                 <h1>Build Modern PCs <span>Without Compatibility Conflicts</span></h1>
-                <p>Zyntech Engine automatically verifies Socket types, RAM frequencies, and PSU Wattage in real time before checkout.</p>
+                <p>Zyntech Engine automatically verifies Socket types, RAM frequencies, and PSU Wattage in real time
+                    before checkout.</p>
                 <div class="hero-stats">
                     <div class="stat-item">
                         <h3>100%</h3>
@@ -94,7 +103,8 @@
             </div>
             <div class="hero-visual">
                 <div class="visual-card">
-                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop" alt="PC Hardware">
+                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop"
+                        alt="PC Hardware">
                 </div>
             </div>
         </div>
@@ -115,7 +125,11 @@
             <div class="about-text-block">
                 <span class="hero-chip"><i class="fa-solid fa-microchip"></i> Who We Are</span>
                 <h2>About <span>ZYNTECH</span></h2>
-                <p>ZYNTECH started with a simple frustration every PC builder knows too well — ordering parts online and hoping they actually fit together. We built our Real-Time Compatibility Engine to take that guesswork out of the equation, checking socket types, RAM standards, and power requirements before a single order ships. Today, we're a hardware store built by enthusiasts, for enthusiasts, committed to helping first-time builders and veterans alike put together systems that just work.</p>
+                <p>ZYNTECH started with a simple frustration every PC builder knows too well — ordering parts online and
+                    hoping they actually fit together. We built our Real-Time Compatibility Engine to take that
+                    guesswork out of the equation, checking socket types, RAM standards, and power requirements before a
+                    single order ships. Today, we're a hardware store built by enthusiasts, for enthusiasts, committed
+                    to helping first-time builders and veterans alike put together systems that just work.</p>
                 <div class="about-stats">
                     <div class="about-stat-item">
                         <i class="fa-solid fa-shield-halved"></i>
@@ -143,6 +157,7 @@
         </div>
     </section>
 
+
     <!-- Track Modal -->
     <div class="track-modal-overlay" id="trackModalOverlay" onclick="toggleTrackModal()"></div>
     <div class="track-modal" id="trackModal">
@@ -161,13 +176,13 @@
     </div>
 
     <!-- Cart Drawer -->
-     
     <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
     <div class="cart-drawer" id="cartDrawer">
         <div class="cart-header">
             <h3><i class="fa-solid fa-cart-shopping"></i> Hardware Build Cart</h3>
             <button class="close-cart-btn" onclick="toggleCart()">&times;</button>
         </div>
+
 
         <div id="compatibilityStatusBox" class="compat-box"></div>
         <div class="cart-items-container" id="cartItemsContainer"></div>
@@ -177,9 +192,12 @@
                 <span>Total Amount:</span>
                 <span class="total-price" id="cartTotal">LKR 0</span>
             </div>
-            <button class="checkout-btn" id="btnCheckout" onclick="goToCheckout()">Proceed to Checkout <i class="fa-solid fa-arrow-right"></i></button>
+
+            <button class="checkout-btn" id="btnCheckout" onclick="goToCheckout()">Proceed to Checkout <i
+                    class="fa-solid fa-arrow-right"></i></button>
         </div>
     </div>
+
 
     <script src="script.js"></script>
     <script>
@@ -205,7 +223,7 @@
                 grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:#64748b;">No component found matching query.</p>';
                 return;
             }
-            
+
             grid.innerHTML = items.map(item => `
                 <div class="product-card">
                     <div class="product-img">
@@ -225,7 +243,7 @@
 
         function filterByCategory(cat) {
             const title = document.getElementById('productGridTitle');
-            if(cat === 'all') {
+            if (cat === 'all') {
                 title.innerText = "All Hardware Catalog";
                 renderProducts(productsData);
             } else {
@@ -353,6 +371,7 @@
         renderProducts(productsData);
         renderCart();
     </script>
-    
+
 </body>
+
 </html>
